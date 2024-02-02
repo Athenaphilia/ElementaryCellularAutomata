@@ -66,9 +66,7 @@ int main(int argc, char *argv[]) {
             compute_next_state(&state2, &state1, rule);
         }
         one_is_current = !one_is_current;
-        if (seconds != 0) {
-            usleep((unsigned int)(seconds * 1000000.0));
-        }
+        usleep((unsigned int)(seconds * 1000000.0));
     }
 
     // clean up
