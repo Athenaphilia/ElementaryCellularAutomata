@@ -39,20 +39,21 @@ int main(int argc, char *argv[]) {
     printf("Value of -s: %u\n", size);
     */
     // make arrays
-    State *state1;
-    State *state2;
-    construct_state(state1, size);
-    construct_state(state2, size);
-    printf("Made past construct\n");
-    fill_starting_state(state1);
-    fill_starting_state(state2);
-    printf("Made past fill\n");
+    State state1;
+    State state2;
 
-    print_state(state1);
-    print_state(state2);
+    construct_state(&state1, size);
+    construct_state(&state2, size);
+
+    fill_starting_state(&state1);
+    fill_starting_state(&state2);
+
+    // run simulation
+    for (int i = 0; i < iterations; i++) {
+        }
 
     // clean up
-    free(state1);
-    free(state2);
+    destroy_state(&state1);
+    destroy_state(&state2);
     return 0;
 }
