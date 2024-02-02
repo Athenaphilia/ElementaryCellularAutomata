@@ -7,6 +7,8 @@ typedef struct State {
     size_t size;
 } State;
 
+bool get_number_from_rule(uint8_t rule, uint8_t number);
+
 void compute_next_state(State *current, State *next, uint8_t rule);
 
 void print_state(State *state);

@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include <wchar.h>
 
+bool get_number_from_rule(uint8_t rule, uint8_t number) {
+    return (bool)((0x1 << number) & rule);
+}
+
 bool new_bool_from_rule(bool first, bool second, bool third, uint8_t rule) {
     uint8_t offset = 0;
     // Compute the offset

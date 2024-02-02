@@ -2,8 +2,8 @@
 
 #### Usage
 
-run `make build` then `./eca`
-or run `make run`
+Run `make build` then `./eca` or run `make run`
+To uninstall, run `make clean`
 
 #### Command Line Arguments
 
