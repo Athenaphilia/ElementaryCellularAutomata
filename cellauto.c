@@ -13,3 +13,14 @@ void print_state(bool *state, uint8_t size) {
     }
     putchar('\n');
 }
+
+void fill_state(bool *state, uint8_t size, bool fill) {
+    for (int i = 0; i < size; i++) {
+        state[i] = fill;
+    }
+}
+
+void fill_starting_state(bool *state, uint8_t size) {
+    fill_state(state, size, false);
+    state[size / 2] = true;
+}

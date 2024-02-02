@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     int opt;
     uint8_t rule = 0x00;
     uint32_t iterations = 10;
-    uint8_t size = 10;
+    size_t size = 10;
 
     while ((opt = getopt(argc, argv, "r:i:s:")) != -1) {
         switch (opt) {
@@ -38,5 +38,17 @@ int main(int argc, char *argv[]) {
     printf("Value of -i: %u\n", iterations);
     printf("Value of -s: %u\n", size);
     */
+    // make arrays
+    bool *state1 = malloc(sizeof(bool) * size);
+    bool *state2 = malloc(sizeof(bool) * size);
+    fill_starting_state(state1, size);
+    fill_starting_state(state2, size);
+
+    print_state(state1, size);
+    print_state(state2, size);
+
+    // clean up
+    free(state1);
+    free(state2);
     return 0;
 }
