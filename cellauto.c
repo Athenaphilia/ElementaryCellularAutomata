@@ -1,5 +1,4 @@
 #include "cellauto.h"
-#include "ruleset.h"
 #include <locale.h>
 #include <stdio.h>
 #include <wchar.h>
