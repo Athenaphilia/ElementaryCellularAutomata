@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 typedef struct State {
     bool *array;
@@ -8,8 +9,10 @@ typedef struct State {
 
 void compute_next_state(bool *current, bool *next, uint8_t size);
 
-void print_state(bool *state, uint8_t size);
+void print_state(State *state);
 
-void fill_state(bool *state, uint8_t size, bool fill);
+void fill_state(State *state, bool fill);
 
-void fill_starting_state(bool *state, uint8_t size);
+void fill_starting_state(State *state);
+
+void construct_state(State *state, size_t size);

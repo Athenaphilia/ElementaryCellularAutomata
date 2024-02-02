@@ -39,13 +39,17 @@ int main(int argc, char *argv[]) {
     printf("Value of -s: %u\n", size);
     */
     // make arrays
-    bool *state1 = malloc(sizeof(bool) * size);
-    bool *state2 = malloc(sizeof(bool) * size);
-    fill_starting_state(state1, size);
-    fill_starting_state(state2, size);
+    State *state1;
+    State *state2;
+    construct_state(state1, size);
+    construct_state(state2, size);
+    printf("Made past construct\n");
+    fill_starting_state(state1);
+    fill_starting_state(state2);
+    printf("Made past fill\n");
 
-    print_state(state1, size);
-    print_state(state2, size);
+    print_state(state1);
+    print_state(state2);
 
     // clean up
     free(state1);
