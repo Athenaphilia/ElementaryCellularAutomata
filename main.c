@@ -33,10 +33,10 @@ int main(int argc, char *argv[]) {
             return 1;
         }
     }
-
+    /*
     printf("Value of -r: %u\n", rule);
     printf("Value of -i: %u\n", iterations);
     printf("Value of -s: %u\n", size);
-
+    */
     return 0;
 }
