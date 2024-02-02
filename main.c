@@ -1,3 +1,4 @@
+#include "cellauto.h"
 #include "ruleset.h"
 #include <stdio.h>
 #include <stdlib.h>
