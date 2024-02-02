@@ -7,7 +7,7 @@ typedef struct State {
     size_t size;
 } State;
 
-void compute_next_state(State *current, State *next);
+void compute_next_state(State *current, State *next, uint8_t rule);
 
 void print_state(State *state);
 

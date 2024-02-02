@@ -15,7 +15,14 @@ bool new_bool_from_rule(bool first, bool second, bool third, uint8_t rule) {
 }
 
 void compute_next_state(State *current, State *next, uint8_t rule) {
-    for (int i = 1; i < current->size - 1; i++) {
+    bool *cur_arr = current->array;
+    bool *nex_arr = next->array;
+    size_t size = current->size;
+    // handle left and right edges
+    nex_arr[0] = new_bool_from_rule(cur_arr[size - 1], cur_arr[0], cur_arr[1], rule);
+    nex_arr[next->size - 1] = new_bool_from_rule(cur_arr[size - 2], cur_arr[size - 1], cur_arr[0], rule);
+    for (int i = 1; i < size - 1; i++) {
+        nex_arr[i] = new_bool_from_rule(cur_arr[i - 1], cur_arr[i], cur_arr[i + 1], rule);
     }
 }
 
